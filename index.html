@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo - Samuel Queiroz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .section-hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
+    }
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-12">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">Samuel Queiroz</h1>
+        <p class="text-lg md:text-xl mt-2">Desenvolvedor de Sites e Aplicativos</p>
+        <div class="mt-4 flex justify-center space-x-4">
+          <a href="mailto:glear.games.mk@gmail.com" class="hover:underline">glear.games.mk@gmail.com</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+      <!-- Habilidades -->
+      <section id="habilidades" class="mb-12 section-hidden">
+        <h2 class="text-3xl font-semibold text-blue-600 mb-4">O que eu sei fazer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h3 class="text-xl font-medium text-gray-800">Criação de Sites (Frontend)</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li><strong>HTML:</strong> Faço a estrutura de sites, como o esqueleto de uma página, para que tudo fique organizado e fácil de navegar.</li>
+              <li><strong>CSS:</strong> Deixo os sites bonitos, com cores, fontes e layouts que funcionam bem em celulares e computadores.</li>
+              <li><strong>JavaScript:</strong> Adiciono funções interativas, como botões que funcionam, formulários que respondem e conteúdos que mudam sem recarregar a página.</li>
+              <li><strong>React:</strong> Crio sites modernos e rápidos, como aplicativos web, com partes que se atualizam sozinhas, como feeds de redes sociais.</li>
+              <li><strong>Vue.js:</strong> Faço sites simples e rápidos de usar, com interfaces que reagem ao que o usuário faz.</li>
+              <li><strong>Tailwind CSS:</strong> Uso para criar designs personalizados de forma rápida, mantendo tudo bem organizado e bonito.</li>
+              <li><strong>Bootstrap:</strong> Utilizo para fazer sites com visual pronto e profissional, economizando tempo.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium text-gray-800">Sistemas e Bancos de Dados (Backend)</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li><strong>Node.js:</strong> Crio sistemas que fazem sites funcionarem, como salvar informações ou conectar com outros serviços.</li>
+              <li><strong>Express:</strong> Uso para organizar o funcionamento de sites, como gerenciar logins ou enviar dados.</li>
+              <li><strong>Python:</strong> Escrevo programas para automatizar tarefas ou criar sistemas, como ferramentas para organizar dados.</li>
+              <li><strong>Django:</strong> Faço sites seguros com áreas de administração, como painéis para gerenciar conteúdo.</li>
+              <li><strong>PostgreSQL:</strong> Organizo informações em bancos de dados, como listas de clientes ou produtos, de forma segura e rápida.</li>
+              <li><strong>MongoDB:</strong> Gerencio dados de forma flexível, ideal para projetos grandes com muitas informações.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2025 Samuel Queiroz. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript para animação de scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section-hidden');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+            entry.target.classList.remove('section-hidden');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+</body>
+</html>
